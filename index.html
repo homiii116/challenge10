@@ -24,16 +24,28 @@
       { first: 'Darth', last: 'Maul', age: 'dead', passed: 44 },
       { first: 'Mace', last: 'Windu', age: 'dead', passed: 53 }
     ];
-
+  
     // Array.prototype.filter()
     // 1. filterを使ってスターウォーズのキャラクターのうち、現在60代のキャラクターだけを戻り値としてコンソールに返してみましょう。
     // ヒント：関数と演算子を使います。
+    const sixties = characters.filter(value => {
+      return value.age > 59 && value.age < 70;
+    });
 
-
+    console.table(sixties);
 
     // Array.prototype.map()
     // 2. スターウォーズ登場人物で上記にある全員の苗字と下の名前の配列を戻り値としてコンソールに返してみましょう。
     // ヒント：関数と変数を使います。
+
+    const fullName = characters.map(value => {
+      let rObj = {};
+      rObj[value.first] = value.last;
+      return rObj;
+    });
+
+    console.log(fullName);
+
 
 
 
